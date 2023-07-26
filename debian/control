@@ -1,0 +1,83 @@
+Source: mraa
+Maintainer: "Radxa Computer Co., Ltd" <dev@radxa.com>
+Section: misc
+Priority: optional
+Standards-Version: 4.6.0
+Build-Depends: cmake (>= 3.15),
+               debhelper (>=12~),
+               devscripts,
+               lintian,
+               swig,
+               python3-dev,
+               libjson-c-dev
+
+Package: libmraa2
+Architecture: any
+Section: libs
+Priority: optional
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+Homepage: http://iotdk.intel.com/docs/master/mraa/
+Description: userspace I/O library (runtime)
+ mraa (libmraa) is library for interacting with userspace I/O on GNU/Linux
+ platforms. The library abstracts platform quirks away from the end user.
+ Currently interfaces supported include GPIO/PWM/I2C/SPI.
+ .
+ This package contains the library used at runtime.
+
+Package: libmraa-dev
+Architecture: any
+Section: libdevel
+Priority: optional
+Depends: libmraa2 (= ${binary:Version}),
+         ${misc:Depends}
+Homepage: http://iotdk.intel.com/docs/master/mraa/
+Description: userspace I/O library (development)
+ mraa (libmraa) is library for interacting with userspace I/O on GNU/Linux
+ platforms. The library abstracts platform quirks away from the end user.
+ Currently interfaces supported include GPIO/PWM/I2C/SPI.
+ .
+ This package contains the library development files.
+
+Package: mraa-examples
+Architecture: all
+Section: doc
+Priority: optional
+Homepage: http://iotdk.intel.com/docs/master/mraa/
+Description: examples for mraa
+ mraa (libmraa) is library for interacting with userspace I/O on GNU/Linux
+ platforms. The library abstracts platform quirks away from the end user.
+ Currently interfaces supported include GPIO/PWM/I2C/SPI.
+ .
+ This package contains mraa examples.
+
+Package: mraa-tools
+Architecture: any
+Depends: libmraa2,
+         ${shlibs:Depends},
+         ${misc:Depends},
+Section: utils
+Priority: optional
+Homepage: http://iotdk.intel.com/docs/master/mraa/
+Description: userspace I/O  tools (GPIO/I2C)
+ mraa (libmraa) is library for interacting with userspace I/O on GNU/Linux
+ platforms. The library abstracts platform quirks away from the end user.
+ Currently interfaces supported include GPIO/PWM/I2C/SPI.
+ .
+ This package contains mraa GPIO tool.
+
+Package: python3-mraa
+Architecture: any
+Depends: libmraa2,
+         python3,
+         ${shlibs:Depends},
+         ${misc:Depends},
+Section: python
+Priority: optional
+Homepage: http://iotdk.intel.com/docs/master/mraa/
+Description: Python 3 binding for mraa
+ mraa (libmraa) is library for interacting with userspace I/O on GNU/Linux
+ platforms. The library abstracts platform quirks away from the end user.
+ Currently interfaces supported include GPIO/PWM/I2C/SPI.
+ .
+ This package contains mraa Python 3 binding.
