@@ -119,6 +119,7 @@ if ("x_${VERSION}" STREQUAL "x_GIT-NOTFOUND" OR "x_${VERSION}" STREQUAL "x_HEAD-
   message (WARNING " - Install git to compile a production libmraa!")
   set (VERSION "v2.2.0")
 endif ()
+set (VERSION "v2.2.0")
 
 message (STATUS "INFO - libmraa Version ${VERSION}")
 message (STATUS "INFO - cmake Version ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION}")
