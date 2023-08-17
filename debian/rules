@@ -6,5 +6,9 @@ include /usr/share/dpkg/architecture.mk
 %:
 	dh $@ --buildsystem=cmake
 
+override_dh_auto_configure:
+	export JAVA_HOME=/usr/lib/jvm/default-java && \
+	dh_auto_configure -O--buildsystem=cmake -- -DBUILDSWIGJAVA=ON -DJAVA_AWT_LIBRARY=/usr/lib/jvm/default-java/lib/libjawt.so -DJAVA_AWT_INCLUDE_PATH=/usr/lib/jvm/default-java/include
+
 override_dh_builddeb:
 	dh_builddeb -- -Zxz

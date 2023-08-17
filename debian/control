@@ -39,6 +39,21 @@ Description: userspace I/O library (development)
  .
  This package contains the library development files.
 
+Package: libmraa-java
+Architecture: any
+Section: java
+Priority: optional
+Depends: libmraa2 (= ${binary:Version}),
+         libc6,
+         ${misc:Depends}
+Homepage: http://iotdk.intel.com/docs/master/mraa/
+Description: userspace I/O library (development)
+ mraa (libmraa) is library for interacting with userspace I/O on GNU/Linux
+ platforms. The library abstracts platform quirks away from the end user.
+ Currently interfaces supported include GPIO/PWM/I2C/SPI.
+ .
+ This package contains mraa Java binding.
+
 Package: mraa-examples
 Architecture: all
 Section: doc

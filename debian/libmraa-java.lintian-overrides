@@ -1,0 +1,5 @@
+# We do not track this on GitHub
+libmraa-java: initial-upload-closes-no-bugs
+
+# This what how upstream package does
+libmraa-java: sharedobject-in-library-directory-missing-soname
