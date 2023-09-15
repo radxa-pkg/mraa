@@ -1,3 +1,11 @@
+mraa (2.2.0-3) stable; urgency=medium
+
+  [ Nascs ]
+  * platform: add Radxa ROCK 3C platform support
+  * radxa rock 3c: add document
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 15 Sep 2023 15:17:04 +0800
+
 mraa (2.2.0-2) stable; urgency=medium
 
   [ ZHANG Yuntian ]
