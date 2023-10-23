@@ -45,7 +45,12 @@ ARM
 * [phyBOARD-Wega](../master/docs/phyboard-wega.md)
 * [96Boards](../master/docs/96boards.md)
 * [ADLINK IPi-SMARC ARM](../master/docs/adlink_ipi_arm.md)
+* [Radxa ROCK 3B](../master/docs/radxa_rock_3b.md)
+* [Radxa ROCK 3C](../master/docs/radxa_rock_3c.md)
+* [Radxa ROCK 5A](../master/docs/radxa_rock_5a.md)
+* [Radxa ROCK 5B](../master/docs/radxa_rock_5b.md)
 * [Rock Pi 4](../master/docs/rockpi4.md)
+* [Orange Pi Prime](../master/docs/orange_pi_prime.md)
 
 MIPS
 ---
@@ -72,6 +77,10 @@ Mock
 JSON platform
 ----
 * [Platform loading](../master/docs/jsonplatform.md)
+
+RISC-V
+----
+* [VisionFive](../master/docs/visionfive.md)
 
 Installing on your board
 ========================
