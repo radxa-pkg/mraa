@@ -1,3 +1,32 @@
+mraa (2.2.0-4) jammy; urgency=medium
+
+  [ Daniel Bovensiepen ]
+  * platform: Add RISC-V architecture with VisionFive
+
+  [ Hsuan-Ting Lu ]
+  * CMakeLists.txt: Fix option string error
+
+  [ nascs ]
+  * platform: add Radxa ROCK 5A platform support
+  * readme: fix Radxa ROCK 5A link
+  * readme: add Radxa ROCK 3C link
+
+  [ Nascs ]
+  * platform: add Radxa ROCK 5B platform support
+
+  [ Gunjan Gupta ]
+  * Add support for Orange Pi Prime
+
+  [ nascs ]
+  * platform: add Radxa ROCK 3B platform support
+
+  [ ZHANG Yuntian ]
+  * Update package release CI
+  * Distribute mraa in general repo
+  * Fix release error
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 23 Oct 2023 03:55:57 +0000
+
 mraa (2.2.0-3) stable; urgency=medium
 
   [ Nascs ]
