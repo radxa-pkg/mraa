@@ -1,3 +1,10 @@
+mraa (2.2.0-5) jammy; urgency=medium
+
+  [ nascs ]
+  * platform: add Radxa CM3 platform support
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 08 Nov 2023 11:36:39 +0000
+
 mraa (2.2.0-4) jammy; urgency=medium
 
   [ Daniel Bovensiepen ]
