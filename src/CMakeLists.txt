@@ -107,11 +107,13 @@ set (mraa_LIB_ARM_SRCS_NOAUTO
   ${PROJECT_SOURCE_DIR}/src/arm/phyboard.c
   ${PROJECT_SOURCE_DIR}/src/arm/banana.c
   ${PROJECT_SOURCE_DIR}/src/arm/de_nano_soc.c
+  ${PROJECT_SOURCE_DIR}/src/arm/radxa_rock_3a.c
   ${PROJECT_SOURCE_DIR}/src/arm/radxa_rock_3b.c
   ${PROJECT_SOURCE_DIR}/src/arm/radxa_rock_3c.c
   ${PROJECT_SOURCE_DIR}/src/arm/radxa_cm3.c
   ${PROJECT_SOURCE_DIR}/src/arm/radxa_rock_5a.c
   ${PROJECT_SOURCE_DIR}/src/arm/radxa_rock_5b.c
+  ${PROJECT_SOURCE_DIR}/src/arm/radxa_cm5_io.c
   ${PROJECT_SOURCE_DIR}/src/arm/rockpi4.c
   ${PROJECT_SOURCE_DIR}/src/arm/adlink_ipi.c
   ${PROJECT_SOURCE_DIR}/src/arm/siemens/iot2050.c
