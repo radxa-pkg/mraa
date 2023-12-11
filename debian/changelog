@@ -1,3 +1,14 @@
+mraa (2.2.0-6) jammy; urgency=medium
+
+  [ nascs ]
+  * platform: add Radxa CM5 IO platform support
+
+  [ Nascs ]
+  * platform: add Radxa ROCK 3A platform support
+  * types.h: fix Radxa ROCK 3B and Radxa CM5 IO wiring
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 11 Dec 2023 02:21:34 +0000
+
 mraa (2.2.0-5) jammy; urgency=medium
 
   [ nascs ]
