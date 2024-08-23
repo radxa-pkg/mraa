@@ -96,24 +96,33 @@ mraa_radxa_cm3()
         return NULL;
     }
 
-    b->pins[13].pwm.parent_id = 0;  // pwm0-m0
-    b->pins[13].pwm.mux_total = 0;
-    b->pins[11].pwm.parent_id = 0;  // pwm0-m1
-    b->pins[11].pwm.mux_total = 0;
-    b->pins[5].pwm.parent_id = 1; // pwm1-m1
-    b->pins[5].pwm.mux_total = 0;
     b->pins[3].pwm.parent_id = 2; // pwm2-m1
     b->pins[3].pwm.mux_total = 0;
-    b->pins[37].pwm.parent_id = 3; // pwm3
-    b->pins[37].pwm.mux_total = 0;
+    b->pins[3].pwm.pinmap = 0;
+    b->pins[5].pwm.parent_id = 1; // pwm1-m1
+    b->pins[5].pwm.mux_total = 0;
+    b->pins[5].pwm.pinmap = 0;
+    b->pins[11].pwm.parent_id = 0;  // pwm0-m1
+    b->pins[11].pwm.mux_total = 0;
+    b->pins[11].pwm.pinmap = 0;
+    b->pins[13].pwm.parent_id = 0;  // pwm0-m0
+    b->pins[13].pwm.mux_total = 0;
+    b->pins[13].pwm.pinmap = 0;
     b->pins[15].pwm.parent_id = 4;  // pwm4
     b->pins[15].pwm.mux_total = 0;
+    b->pins[15].pwm.pinmap = 0;
     b->pins[31].pwm.parent_id = 6; // pwm6
     b->pins[31].pwm.mux_total = 0;
-    b->pins[33].pwm.parent_id = 15; // pwm7
-    b->pins[33].pwm.mux_total = 0;
+    b->pins[31].pwm.pinmap = 0;
     b->pins[32].pwm.parent_id = 11; // pwm11-m1
     b->pins[32].pwm.mux_total = 0;
+    b->pins[32].pwm.pinmap = 0;
+    b->pins[33].pwm.parent_id = 7; // pwm7
+    b->pins[33].pwm.mux_total = 0;
+    b->pins[33].pwm.pinmap = 0;
+    b->pins[37].pwm.parent_id = 3; // pwm3
+    b->pins[37].pwm.mux_total = 0;
+    b->pins[37].pwm.pinmap = 0;
 
     mraa_radxa_cm3_pininfo(b, 0, -1, -1, (mraa_pincapabilities_t){0,0,0,0,0,0,0,0}, "INVALID");
     mraa_radxa_cm3_pininfo(b, 1, -1, -1, (mraa_pincapabilities_t){1,0,0,0,0,0,0,0}, "3.3V");
@@ -141,7 +150,7 @@ mraa_radxa_cm3()
     mraa_radxa_cm3_pininfo(b, 23, 4, 11, (mraa_pincapabilities_t){1,1,0,0,1,1,0,0}, "GPIO4_B3");
     mraa_radxa_cm3_pininfo(b, 24, 4, 6, (mraa_pincapabilities_t){1,1,0,0,1,0,0,0}, "GPIO4_A6");
     mraa_radxa_cm3_pininfo(b, 25, -1, -1, (mraa_pincapabilities_t){1,0,0,0,0,0,0,0}, "GND");
-    mraa_radxa_cm3_pininfo(b, 26, -1, -1, (mraa_pincapabilities_t){1,0,0,0,0,0,1,0}, "SARADC_VIN3");
+    mraa_radxa_cm3_pininfo(b, 26, 4, 21, (mraa_pincapabilities_t){1,1,0,0,1,0,0,1}, "GPIO4_C5");
     mraa_radxa_cm3_pininfo(b, 27, 4, 12, (mraa_pincapabilities_t){1,1,0,0,0,1,0,0}, "GPIO4_B4");
     mraa_radxa_cm3_pininfo(b, 28, 4, 13, (mraa_pincapabilities_t){1,1,0,0,0,1,0,0}, "GPIO4_B5");
     mraa_radxa_cm3_pininfo(b, 29, 4, 9, (mraa_pincapabilities_t){1,1,0,0,0,0,0,0}, "GPIO4_B1");
