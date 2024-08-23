@@ -1,3 +1,25 @@
+mraa (2.2.0-7) jammy; urgency=medium
+
+  [ Chuckduey ]
+  * Adding in RPI 5 support
+
+  [ Nascs ]
+  * platform: add radxa e25 support
+
+  [ Khem Raj ]
+  * mraa: Use posix basename
+  * gpio: Include limits.h for PATH_MAX
+  * cmake: Use a regular expression to match x86 architectures
+
+  [ Nascs ]
+  * radxa cm3: fix pin 26
+  * platform: adjusting the order of pwm pins of radxa borads
+  * platform: fix the pwm function of radxa boards
+  * radxa cm5 io: remove useless pwm pins
+  * platform: fix pwm initialization of radxa boards
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 23 Aug 2024 07:01:45 +0000
+
 mraa (2.2.0-6) jammy; urgency=medium
 
   [ nascs ]
