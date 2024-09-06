@@ -56,7 +56,7 @@ dch: debian/changelog
 	EDITOR=true gbp dch --commit --debian-branch=master --release --dch-opt=--upstream
 
 .PHONY: deb
-deb: debian
+deb: debian SOURCE
 	debuild --no-lintian --lintian-hook "lintian --fail-on error,warning --suppress-tags bad-distribution-in-changes-file -- %p_%v_*.changes" --no-sign -b -aarm64 -Pcross
 
 .PHONY: release
