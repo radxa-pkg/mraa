@@ -37,13 +37,17 @@ if(NOT ${found})
   endif()
 
   if(PYTHONINTERP_FOUND)
-    # Copy outputs
-    set(_found ${PYTHONINTERP_FOUND})
-    set(_executable ${PYTHON_EXECUTABLE})
-    set(_version_string ${PYTHON_VERSION_STRING})
-    set(_version_major ${PYTHON_VERSION_MAJOR})
-    set(_version_minor ${PYTHON_VERSION_MINOR})
-    set(_version_patch ${PYTHON_VERSION_PATCH})
+    if("${PYTHON_VERSION_MAJOR}" STREQUAL "${${version_major}}")
+      # Copy outputs
+      set(_found ${PYTHONINTERP_FOUND})
+      set(_executable ${PYTHON_EXECUTABLE})
+      set(_version_string ${PYTHON_VERSION_STRING})
+      set(_version_major ${PYTHON_VERSION_MAJOR})
+      set(_version_minor ${PYTHON_VERSION_MINOR})
+      set(_version_patch ${PYTHON_VERSION_PATCH})
+    else()
+      message(STATUS "Found Python ${PYTHON_VERSION_STRING}, but major version ${${version_major}} is required")
+    endif()
 
     # Clear find_host_package side effects
     unset(PYTHONINTERP_FOUND)
@@ -137,6 +141,9 @@ endfunction(find_python)
 
 set(MIN_VER_PYTHON2 2.7)
 set(MIN_VER_PYTHON3 3.2)
+
+set(PYTHON2_VERSION_MAJOR 2)
+set(PYTHON3_VERSION_MAJOR 3)
 
 find_python(2.7 "${MIN_VER_PYTHON2}" PYTHON2_LIBRARY PYTHON2_INCLUDE_DIR
     PYTHON2INTERP_FOUND PYTHON2_EXECUTABLE PYTHON2_VERSION_STRING
