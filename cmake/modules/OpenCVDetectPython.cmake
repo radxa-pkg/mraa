@@ -32,7 +32,7 @@ if(NOT ${found})
     set(Python_EXECUTABLE "${PYTHON_EXECUTABLE}")
   endif()
 
-  if(${CMAKE_VERSION} VERSION_GREATER "3.12")
+  if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.12")
     find_package(Python "${preferred_version}" COMPONENTS Interpreter)
     if(NOT Python_Interpreter_FOUND)
       find_package(Python "${min_version}" COMPONENTS Interpreter)
