@@ -29,7 +29,7 @@ function(find_python preferred_version min_version library_env include_dir_env
 if(NOT ${found})
   if(${executable})
     set(PYTHON_EXECUTABLE "${${executable}}")
-    set(Python_EXECUTABLE "${PYTHON_EXECUTABLE}")
+    set(Python_EXECUTABLE "${${executable}}")
   endif()
 
   if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.12")
