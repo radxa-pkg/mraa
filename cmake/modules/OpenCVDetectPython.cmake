@@ -29,15 +29,39 @@ function(find_python preferred_version min_version library_env include_dir_env
 if(NOT ${found})
   if(${executable})
     set(PYTHON_EXECUTABLE "${${executable}}")
+    set(Python_EXECUTABLE "${PYTHON_EXECUTABLE}")
   endif()
 
-  find_package(PythonInterp "${preferred_version}")
-  if(NOT PYTHONINTERP_FOUND)
-    find_package(PythonInterp "${min_version}")
-  endif()
+  if(${CMAKE_VERSION} VERSION_GREATER "3.12")
+    find_package(Python "${preferred_version}" COMPONENTS Interpreter)
+    if(NOT Python_Interpreter_FOUND)
+      find_package(Python "${min_version}" COMPONENTS Interpreter)
+    endif()
 
-  if(PYTHONINTERP_FOUND)
-    if("${PYTHON_VERSION_MAJOR}" STREQUAL "${${version_major}}")
+    if(Python_Interpreter_FOUND)
+      # Copy outputs
+      set(_found ${Python_Interpreter_FOUND})
+      set(_executable ${Python_EXECUTABLE})
+      set(_version_string ${Python_VERSION})
+      set(_version_major ${Python_VERSION_MAJOR})
+      set(_version_minor ${Python_VERSION_MINOR})
+      set(_version_patch ${Python_VERSION_PATCH})
+
+      # Clear find_host_package side effects
+      unset(Python_Interpreter_FOUND)
+      unset(Python_EXECUTABLE CACHE)
+      unset(Python_VERSION)
+      unset(Python_VERSION_MAJOR)
+      unset(Python_VERSION_MINOR)
+      unset(Python_VERSION_PATCH)
+    endif()
+  else()
+    find_package(PythonInterp "${preferred_version}")
+    if(NOT PYTHONINTERP_FOUND)
+      find_package(PythonInterp "${min_version}")
+    endif()
+
+    if(PYTHONINTERP_FOUND)
       # Copy outputs
       set(_found ${PYTHONINTERP_FOUND})
       set(_executable ${PYTHON_EXECUTABLE})
@@ -45,17 +69,15 @@ if(NOT ${found})
       set(_version_major ${PYTHON_VERSION_MAJOR})
       set(_version_minor ${PYTHON_VERSION_MINOR})
       set(_version_patch ${PYTHON_VERSION_PATCH})
-    else()
-      message(STATUS "Found Python ${PYTHON_VERSION_STRING}, but major version ${${version_major}} is required")
-    endif()
 
-    # Clear find_host_package side effects
-    unset(PYTHONINTERP_FOUND)
-    unset(PYTHON_EXECUTABLE CACHE)
-    unset(PYTHON_VERSION_STRING)
-    unset(PYTHON_VERSION_MAJOR)
-    unset(PYTHON_VERSION_MINOR)
-    unset(PYTHON_VERSION_PATCH)
+      # Clear find_host_package side effects
+      unset(PYTHONINTERP_FOUND)
+      unset(PYTHON_EXECUTABLE CACHE)
+      unset(PYTHON_VERSION_STRING)
+      unset(PYTHON_VERSION_MAJOR)
+      unset(PYTHON_VERSION_MINOR)
+      unset(PYTHON_VERSION_PATCH)
+    endif()
   endif()
 
   if(_found)
@@ -141,9 +163,6 @@ endfunction(find_python)
 
 set(MIN_VER_PYTHON2 2.7)
 set(MIN_VER_PYTHON3 3.2)
-
-set(PYTHON2_VERSION_MAJOR 2)
-set(PYTHON3_VERSION_MAJOR 3)
 
 find_python(2.7 "${MIN_VER_PYTHON2}" PYTHON2_LIBRARY PYTHON2_INCLUDE_DIR
     PYTHON2INTERP_FOUND PYTHON2_EXECUTABLE PYTHON2_VERSION_STRING
